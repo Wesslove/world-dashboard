@@ -9,17 +9,18 @@ function useCountries() {
     fetch("https://restcountries.com/v3.1/all?fields=name,region,population,flags")
       .then((res) => {
         if (!res.ok) {
-          throw new Error("Erreur API");
+          throw new Error("Erreur API: " + res.status);
         }
         return res.json();
       })
       .then((data) => {
+        console.log("Countries loaded:", data.length);
         setCountries(data);
+        setLoading(false);
       })
       .catch((err) => {
+        console.error("API Error:", err);
         setError(err.message);
-      })
-      .finally(() => {
         setLoading(false);
       });
   }, []);
