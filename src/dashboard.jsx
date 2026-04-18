@@ -18,7 +18,12 @@ function Dashboard() {
     localStorage.setItem("theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return (
+    <div className="loading">
+      <div className="loading-spinner"></div>
+      <p className="loading-text">Loading countries...</p>
+    </div>
+  );
   if (error) return <p>Error : {error}</p>;
 
   const totalCountries = countries.length;
