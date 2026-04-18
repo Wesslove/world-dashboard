@@ -1,0 +1,294 @@
+/* ===== Global ===== */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f5f7fa;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* ===== Header ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+/* ===== Controls ===== */
+button,
+select {
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
+/* ===== Stats ===== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.card p {
+  margin: 0;
+  color: #64748b;
+}
+
+.card strong {
+  font-size: 1.6rem;
+}
+
+/* ===== Filter ===== */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-group label {
+  font-weight: 500;
+  color: #374151;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.filter-group button {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* ===== Grid ===== */
+.countries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ===== Country card ===== */
+.country-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.country-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.flag {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.country-content {
+  padding: 1rem;
+}
+
+.country-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.country-content .badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  background: #e2e8f0;
+  color: #334155;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.country-content .population {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* ===== Animations ===== */
+.card,
+.country,
+button,
+select {
+  transition: 
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+/* === Grid des pays === */
+.countries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* === Country Card === */
+.country-card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.country-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+}
+
+/* === Flag === */
+.flag {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* === Content === */
+.country-content {
+  padding: 1rem;
+}
+
+.country-content h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+}
+
+/* === Badge === */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: #e2e8f0;
+  color: #334155;
+  margin-bottom: 0.5rem;
+}
+
+/* === Population === */
+.population {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* === Dark mode === */
+.dark .country-card {
+  background: #1e293b;
+}
+
+.dark .badge {
+  background: #334155;
+  color: #e5e7eb;
+}
+
+.dark .population {
+  color: #cbd5f5;
+}
+
+.card:hover,
+.country:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.15);
+}
+
+button:hover,
+select:hover {
+  opacity: 0.9;
+}
+
+/* ===== Dark mode ===== */
+.dark {
+  background-color: #0f172a;
+  color: #e5e7eb;
+}
+
+.dark .card {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+}
+
+.dark .country {
+  background: #1e293b;
+}
+
+.dark .badge {
+  background: #334155;
+  color: #e5e7eb;
+}
+
+.dark button,
+.dark select {
+  background: #1e293b;
+  color: white;
+  border: 1px solid #334155;
+}
+
+.dark .country-card {
+  background: #1e293b;
+}
+
+.dark .filter-group label {
+  color: #e5e7eb;
+}
+
+.dark .filter-group input,
+.dark .filter-group select {
+  background: #1e293b;
+  color: white;
+  border: 1px solid #334155;
+}
+
+.dark .filter-group button {
+  background: #1e293b;
+  color: white;
+  border: 1px solid #334155;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 1.4rem;
+  }
+}
